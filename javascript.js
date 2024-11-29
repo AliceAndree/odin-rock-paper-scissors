@@ -24,3 +24,12 @@ function getComputerChoice() {
 }
 
 console.log(getComputerChoice());
+
+// Get human's choice between Rock, Paper or Scissors.
+
+function getHumanChoice() {
+  let humanChoice = prompt("Please choose Rock, Paper or Scissors.");
+  return humanChoice;
+}
+
+console.log(getHumanChoice());
