@@ -29,7 +29,23 @@ console.log(getComputerChoice());
 
 function getHumanChoice() {
   let humanChoice = prompt("Please choose Rock, Paper or Scissors.");
-  return humanChoice;
+
+  switch (humanChoice) {
+    case "Rock":
+    case "rock":
+      return rock;
+      break;
+    case "Paper":
+    case "paper":
+      return paper;
+      break;
+    case "Scissors":
+    case "scissors":
+      return scissors;
+      break;
+    default:
+      return "Please choose a valid option.";
+  }
 }
 
 console.log(getHumanChoice());
