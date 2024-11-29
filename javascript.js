@@ -12,12 +12,15 @@ function getComputerChoice() {
 
   switch (randomNumber) {
     case 1:
+      console.log(`Computer's choice: ${rock}`);
       return rock;
       break;
     case 2:
+      console.log(`Computer's choice: ${paper}`);
       return paper;
       break;
     case 3:
+      console.log(`Computer's choice: ${scissors}`);
       return scissors;
       break;
   }
@@ -31,12 +34,15 @@ function getHumanChoice() {
 
   switch (humanChoice) {
     case "rock":
+      console.log(`Your choice: ${rock}`);
       return rock;
       break;
     case "paper":
+      console.log(`Your choice: ${paper}`);
       return paper;
       break;
     case "scissors":
+      console.log(`Your choice: ${scissors}`);
       return scissors;
       break;
     default:
@@ -51,36 +57,62 @@ let comuterScore = 0;
 
 // Logic the play a single round
 
+// function playRound(humanChoice, computerChoice) {
+//   if (humanChoice === rock) {
+//     console.log("HUMAN: ROCK");
+//     if (computerChoice === paper) {
+//       console.log("COMPUTER PAPER");
+//       return "Computer wins!";
+//     } else if (computerChoice === scissors) {
+//       console.log("COMPUTER SCISSORS");
+//       return "You win!";
+//     } else {
+//       return "Round is null...";
+//     }
+//   } else if (humanChoice === paper) {
+//     console.log("HUMAN: PAPER");
+//     if (computerChoice === scissors) {
+//       console.log("COMPUTER SCISSORS");
+//       return "Computer wins!";
+//     } else if (computerChoice === rock) {
+//       console.log("COMPUTER ROCK");
+//       return "You win!";
+//     } else {
+//       return "Round is null...";
+//     }
+//   } else if (humanChoice === scissors) {
+//     console.log("HUMAN: SCISSORS");
+//     if (computerChoice === rock) {
+//       console.log("COMPUTER ROCK");
+//       return "Computer wins!";
+//     } else if (computerChoice === paper) {
+//       console.log("COMPUTER PAPER");
+//       return "You win!";
+//     } else {
+//       return "Round is null...";
+//     }
+//   } else {
+//     return "Unvalid round";
+//   }
+// }
+
 function playRound(humanChoice, computerChoice) {
-  if (humanChoice == rock) {
-    if (computerChoice == paper) {
-      return "Computer wins!";
-    } else if (computerChoice == scissors) {
-      return "You win!";
-    } else {
-      return "Round is null...";
-    }
-  } else if (humanChoice == paper) {
-    if (computerChoice == scissors) {
-      return "Computer wins!";
-    } else if (computerChoice == rock) {
-      return "You win!";
-    } else {
-      return "Round is null...";
-    }
-  } else if (humanChoice == scissors) {
-    if (computerChoice == rock) {
-      return "Computer wins!";
-    } else if (computerChoice == paper) {
-      return "You win!";
-    } else {
-      return "Round is null...";
-    }
+  if (humanChoice === rock && computerChoice === paper) {
+    return "Computer wins!";
+  } else if (humanChoice === rock && computerChoice === scissors) {
+    return "You win!";
+  } else if (humanChoice === paper && computerChoice === scissors) {
+    return "Computer wins!";
+  } else if (humanChoice === paper && computerChoice === rock) {
+    return "You win!";
+  } else if (humanChoice === scissors && computerChoice === rock) {
+    return "Computer wins!";
+  } else if (humanChoice === scissors && computerChoice === paper) {
+    return "You win!";
   } else {
-    return "Unvalid round";
+    return "Round is null...";
   }
 }
 let humanSelection = getHumanChoice();
 let computerSelection = getComputerChoice();
-console.log(`Computer's choice: ${getComputerChoice()}`);
 console.log(playRound(humanSelection, computerSelection));
