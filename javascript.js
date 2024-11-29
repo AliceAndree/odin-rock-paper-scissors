@@ -29,17 +29,15 @@ console.log(getComputerChoice());
 
 function getHumanChoice() {
   let humanChoice = prompt("Please choose Rock, Paper or Scissors.");
+  humanChoice = humanChoice.toLowerCase();
 
   switch (humanChoice) {
-    case "Rock":
     case "rock":
       return rock;
       break;
-    case "Paper":
     case "paper":
       return paper;
       break;
-    case "Scissors":
     case "scissors":
       return scissors;
       break;
