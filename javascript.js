@@ -23,8 +23,6 @@ function getComputerChoice() {
   }
 }
 
-console.log(getComputerChoice());
-
 // Get human's choice between Rock, Paper or Scissors.
 
 function getHumanChoice() {
@@ -46,4 +44,43 @@ function getHumanChoice() {
   }
 }
 
-console.log(getHumanChoice());
+// Initialize scores
+
+let humanScore = 0;
+let comuterScore = 0;
+
+// Logic the play a single round
+
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice == rock) {
+    if (computerChoice == paper) {
+      return "Computer wins!";
+    } else if (computerChoice == scissors) {
+      return "You win!";
+    } else {
+      return "Round is null...";
+    }
+  } else if (humanChoice == paper) {
+    if (computerChoice == scissors) {
+      return "Computer wins!";
+    } else if (computerChoice == rock) {
+      return "You win!";
+    } else {
+      return "Round is null...";
+    }
+  } else if (humanChoice == scissors) {
+    if (computerChoice == rock) {
+      return "Computer wins!";
+    } else if (computerChoice == paper) {
+      return "You win!";
+    } else {
+      return "Round is null...";
+    }
+  } else {
+    return "Unvalid round";
+  }
+}
+let humanSelection = getHumanChoice();
+let computerSelection = getComputerChoice();
+console.log(`Computer's choice: ${getComputerChoice()}`);
+console.log(playRound(humanSelection, computerSelection));
