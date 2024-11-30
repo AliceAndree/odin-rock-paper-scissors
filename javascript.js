@@ -1,6 +1,8 @@
 let rock = "Rock";
 let paper = "Paper";
 let scissors = "Scissors";
+let humanScore = 0;
+let computerScore = 0;
 
 // Get computer's choice between Rock(1), Paper(2) or Scissors(3)
 function getComputerChoice() {
@@ -49,9 +51,6 @@ function getHumanChoice() {
       return "Please choose a valid option.";
   }
 }
-
-let humanScore = 0;
-let computerScore = 0;
 
 // Logic the play a single round
 
