@@ -52,7 +52,7 @@ function getHumanChoice() {
   }
 }
 
-// Logic the play a single round
+// Logic to play a single round
 
 function playRound(humanChoice, computerChoice) {
   if (humanChoice === rock && computerChoice === paper) {
@@ -84,6 +84,8 @@ function playRound(humanChoice, computerChoice) {
     return "Round is null...";
   }
 }
+
+// Function that starts the entire game (for five rounds)
 
 function playGame() {
   for (let i = 0; i <= 4; i++) {
