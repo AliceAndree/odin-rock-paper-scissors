@@ -1,6 +1,7 @@
-let rock = "Rock";
-let paper = "Paper";
-let scissors = "Scissors";
+const rock = "Rock";
+const paper = "Paper";
+const scissors = "Scissors";
+const buttons = document.querySelectorAll("button");
 let humanScore = 0;
 let computerScore = 0;
 
@@ -30,9 +31,8 @@ function getComputerChoice() {
 
 // Get human's choice between Rock, Paper or Scissors.
 
-function getHumanChoice() {
-  let humanChoice = prompt("Please choose Rock, Paper or Scissors.");
-  humanChoice = humanChoice.toLowerCase();
+function getHumanChoice(buttonValue) {
+  let humanChoice = buttonValue;
 
   switch (humanChoice) {
     case "rock":
@@ -87,14 +87,23 @@ function playRound(humanChoice, computerChoice) {
 
 // Function that starts the entire game (for five rounds)
 
-function playGame() {
-  for (let i = 0; i <= 4; i++) {
-    let humanSelection = getHumanChoice();
-    let computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection);
-    console.log(`Your score: ${humanScore}`);
-    console.log(`Computer's score: ${computerScore}`);
-  }
+function playGame(buttonValue) {
+  const humanSelection = getHumanChoice(buttonValue);
+  const computerSelection = getComputerChoice();
+  playRound(humanSelection, computerSelection);
+  console.log(`Your score: ${humanScore}`);
+  console.log(`Computer's score: ${computerScore}`);
 }
 
-//playGame();
+// playGame();
+
+// EVENT LISTENER
+
+buttons.forEach((button) => {
+  button.addEventListener("click", function (e) {
+    const buttonValue = e.target.parentNode.value;
+    if (humanScore != 5 && computerScore != 5) {
+      playGame(buttonValue);
+    }
+  });
+});

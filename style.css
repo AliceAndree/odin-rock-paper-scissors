@@ -46,30 +46,30 @@ button:hover {
   animation: pulse 1s infinite;
 }
 
-.paper-button,
-.rock-button {
+#paper-button,
+#rock-button {
   align-self: self-start;
 }
 
-.scissors-button {
+#scissors-button {
   animation-delay: 0.2s;
 }
 
-.paper-button {
+#paper-button {
   animation-delay: 0.4s;
 }
 
-.rock-button {
+#rock-button {
   animation-delay: 0.6s;
 }
 
-.blue-star {
+#blue-star {
   margin-right: 45px;
 }
 
-.blue-star,
-.pink-star,
-.yellow-star {
+#blue-star,
+#pink-star,
+#yellow-star {
   animation: rotating 60s linear infinite;
 }
 
