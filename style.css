@@ -36,10 +36,14 @@ body {
 }
 
 button {
+  padding: 0;
   background-color: transparent;
   cursor: pointer;
   border: none;
-  /* animation: pulse 1s infinite; */
+}
+
+button img {
+  cursor: pointer;
 }
 
 button:hover {
@@ -64,16 +68,29 @@ button:hover {
 }
 
 #blue-star {
-  margin-right: 45px;
+  margin-left: -30px;
 }
 
-#blue-star,
-#pink-star,
-#yellow-star {
-  animation: rotating 60s linear infinite;
+#scissors-hand {
+  margin: -114px 0 0 120px;
+}
+
+#rock-hand {
+  margin-left: 26px;
+}
+
+#paper-hand,
+#rock-hand {
+  margin-top: -115px;
+}
+
+#you-won,
+#you-lose {
+  margin: -122px 0 0 0;
 }
 
 /* Button Animations */
+
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -83,14 +100,5 @@ button:hover {
   }
   100% {
     transform: scale(1);
-  }
-}
-
-@keyframes rotating {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
